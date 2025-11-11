@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HTML Fundamentals - FreeLearn</title>
+  <meta name="description" content="Watch free courses and earn certificates upon completion">
+  <meta name="keywords" content="free courses, online learning, certification, education">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <style>
+    .course-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .video-container {
+      flex: 2;
+      min-width: 300px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      background: #000;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 280px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .lesson-item {
+      padding: 10px;
+      margin: 5px 0;
+      cursor: pointer;
+      border-left: 3px solid #eee;
+      transition: all 0.3s;
+    }
+    .lesson-item:hover {
+      background: #f8f9fa;
+      border-left-color: #5fcf80;
+    }
+    .lesson-item.active {
+      background: #f0f7ff;
+      border-left-color: #1976d2;
+      font-weight: 500;
+    }
+    .quiz-container {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .quiz-question {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .quiz-options {
+      margin-left: 20px;
+    }
+    .quiz-options label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .timer {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #dc3545;
+      margin-bottom: 20px;
+      text-align: right;
+    }
+    .progress-container {
+      margin: 20px 0;
+    }
+    .progress {
+      height: 10px;
+    }
+    .certificate-section {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    .certificate-icon {
+      font-size: 4em;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Go Learn</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="trainers.html">Instructors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn-login me-2">Login</a>
+        <a href="register.html" class="btn-getstarted">Sign Up</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.getElementById('navmenu');
+      
+      if (mobileNavToggle && navmenu) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          navmenu.classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+      }
+      
+      // Close mobile menu when clicking on a nav link
+      document.querySelectorAll('#navmenu a').forEach(navLink => {
+        navLink.addEventListener('click', () => {
+          if (navmenu.classList.contains('mobile-nav-active')) {
+            mobileNavToggle.click();
+          }
+        });
+      });
+      
+      // Set active class based on current page
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('#navmenu a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <main class="main">
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>HTML Fundamentals</h1>
+              <p class="mb-0">Master the basics of HTML with this comprehensive tutorial. Complete the lesson and test your knowledge with the quiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="progress-container">
+          <div class="d-flex justify-content-between mb-2">
+            <span>Course Progress</span>
+            <span id="progress-percent">25%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="course-container">
+          <div class="video-container">
+            <div class="video-wrapper">
+              <div id="player"></div>
+              <div id="video-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); color: white; display: flex; justify-content: center; align-items: center; font-size: 1.2em;">
+                Please watch the video to unlock the quiz
+              </div>
+            </div>
+            
+            <div class="video-info">
+              <h3 id="current-lesson">Fundamental of HTML ft.EMC</h3>
+              <p id="lesson-description">Learn the basics of HTML with this comprehensive tutorial. Perfect for beginners who want to start their web development journey.</p>
+            </div>
+
+            <div class="quiz-container" id="quiz-container">
+              <h4>Quiz: Test Your Knowledge</h4>
+              <div class="timer" id="quiz-timer">Time Remaining: 20:00</div>
+              
+              <form id="quiz-form">
+                <div class="quiz-question">
+                  <p>1. What does HTML stand for?</p>
+                  <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+                    <label><input type="radio" name="q1" value="b"> Hyperlinks and Text Markup Language</label>
+                    <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-question">
+                  <p>2. Which CSS property is used to change the text color of an element?</p>
+                  <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="a"> text-color</label>
+                    <label><input type="radio" name="q2" value="b"> font-color</label>
+                    <label><input type="radio" name="q2" value="c"> color</label>
+                  </div>
+                </div>
+                
+                <button type="button" class="btn btn-primary" id="submit-quiz">Submit Quiz</button>
+              </form>
+            </div>
+
+            <div class="certificate-section" id="certificate-section">
+              <div class="certificate-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <h3>Congratulations!</h3>
+              <p>You have successfully completed the course and passed the quiz with a score of <strong>90%</strong>.</p>
+              <p>Your certificate is ready to download. Click the button below to get your certificate.</p>
+              <button class="btn btn-success btn-lg mt-3" id="download-certificate">
+                <i class="bi bi-download me-2"></i>Download Certificate
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar">
+            <h4>Course Content</h4>
+            <div class="list-group" id="lesson-list">
+              <div class="lesson-item active" id="video-lesson">
+                <div class="d-flex justify-content-between">
+                  <span>1. Fundamentals of HTML ft. EMC</span>
+                  <i class="bi bi-play-circle"></i>
+                </div>
+                <small class="text-muted">Watch Time: 20:00</small>
+              </div>
+              <div class="lesson-item" id="quiz-lesson">
+                <div class="d-flex justify-content-between">
+                  <span>2. Quiz: Test Your Knowledge</span>
+                  <i class="bi bi-lock"></i>
+                </div>
+                <small class="text-muted">Complete the video to unlock</small>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h5>About This Course</h5>
+              <p>This comprehensive course will take you from beginner to advanced level in web development. Learn HTML, CSS, JavaScript, and more!</p>
+              
+              <div class="course-info mt-3">
+                <p><i class="bi bi-clock me-2"></i> Duration: 8 weeks</p>
+                <p><i class="bi bi-collection-play me-2"></i> 50+ lessons</p>
+                <p><i class="bi bi-award me-2"></i> Certificate on completion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">FreeLearn</span>
+          </a>
+          <p>Empowering people through free education. Learn new skills, earn certificates, and advance your career with our free online courses.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Courses</h4>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Data Science</a></li>
+            <li><a href="#">Mobile Development</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            123 Learning Street <br>
+            Education City, 54321<br>
+            India <br><br>
+            <strong>Email:</strong> info@freelearn.com<br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">FreeLearn</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="#">YourName</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- YouTube IFrame API -->
+  <script>
+    // This function creates a script tag for the YouTube IFrame API
+    function loadYouTubeAPI() {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+    
+    // Load the YouTube API when the page loads
+    window.onload = loadYouTubeAPI;
+  </script>
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // YouTube Player API
+    let player;
+    let videoWatched = false;
+    let videoDuration = 0;
+    let currentTime = 0;
+    let checkInterval;
+    let quizUnlocked = false;
+    
+    // This function is called by the YouTube IFrame API when it's ready
+    function onYouTubeIframeAPIReady() {
+      try {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          videoId: 'FYErehuSuuw',
+          playerVars: {
+            'enablejsapi': 1,
+            'origin': window.location.origin,
+            'playsinline': 1,
+            'controls': 1,
+            'disablekb': 1,
+            'fs': 1,
+            'modestbranding': 1,
+            'rel': 0,
+            'autoplay': 0,  // Disable autoplay to prevent conflicts
+            'iv_load_policy': 3  // Hide annotations
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange,
+            'onError': onPlayerError
+          }
+        });
+      } catch (error) {
+        console.error('Error initializing YouTube player:', error);
+      }
+    }
+
+    function onPlayerReady(event) {
+      try {
+        // Get video duration when player is ready
+        videoDuration = player.getDuration();
+        
+        // Make sure the overlay is initially visible
+        const overlay = document.getElementById('video-overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+        }
+        
+        // Clear any existing intervals to prevent duplicates
+        if (checkInterval) clearInterval(checkInterval);
+        
+        // Start checking playback progress with a more robust interval
+        checkInterval = setInterval(checkPlayback, 500); // More frequent checks for smoother control
+        
+        // Preload the video for better performance
+        player.loadVideoById({
+          videoId: 'FYErehuSuuw',
+          suggestedQuality: 'hd720'  // Request HD quality if available
+        });
+        
+        console.log('YouTube player is ready');
+      } catch (error) {
+        console.error('Error in onPlayerReady:', error);
+      }
+    }
+
+    function onPlayerStateChange(event) {
+      try {
+        const overlay = document.getElementById('video-overlay');
+        
+        switch (event.data) {
+          case YT.PlayerState.PLAYING:
+            if (overlay) overlay.style.display = 'none';
+            videoWatched = false;
+            break;
+            
+          case YT.PlayerState.PAUSED:
+            if (overlay) overlay.style.display = 'flex';
+            // Removed auto-resume functionality
+            break;
+            
+          case YT.PlayerState.ENDED:
+            if (!quizUnlocked) {
+              unlockQuiz();
+              videoWatched = true;
+            }
+            break;
+            
+          case YT.PlayerState.BUFFERING:
+            // Handle buffering state if needed
+            break;
+            
+          case YT.PlayerState.CUED:
+            // Video is cued and ready to play
+            break;
+        }
+      } catch (error) {
+        console.error('Error in onPlayerStateChange:', error);
+      }
+    }
+    
+    // Handle player errors
+    function onPlayerError(event) {
+      console.error('YouTube Player Error:', event.data);
+      // Attempt to recover from error
+      try {
+        if (player && typeof player.playVideo === 'function') {
+          setTimeout(() => {
+            player.playVideo();
+          }, 1000);
+        }
+      } catch (e) {
+        console.error('Error recovering from player error:', e);
+      }
+    }
+
+    function checkPlayback() {
+      if (!player) return;
+      
+      try {
+        const newTime = player.getCurrentTime();
+        const state = player.getPlayerState();
+        
+        if (state === YT.PlayerState.PLAYING) {
+          // Prevent seeking forward more than 5 seconds
+          if (newTime > currentTime + 5) {
+            player.seekTo(currentTime, true);
+            return;
+          }
+          
+          // Update current time if it's a small increment
+          if (newTime > currentTime) {
+            currentTime = newTime;
+          }
+          
+          // Check if video is mostly watched (95%)
+          if (!videoWatched && videoDuration > 0 && (currentTime / videoDuration) > 0.95) {
+            videoWatched = true;
+            unlockQuiz();
+          }
+        }
+      } catch (error) {
+        console.error('Error in checkPlayback:', error);
+      }
+    }
+    
+    function unlockQuiz() {
+      if (quizUnlocked) return;
+      
+      quizUnlocked = true;
+      const quizLesson = document.getElementById('quiz-lesson');
+      const quizIcon = quizLesson.querySelector('i');
+      const quizNote = quizLesson.querySelector('small');
+      
+      // Update UI
+      quizLesson.classList.add('unlocked');
+      quizLesson.style.cursor = 'pointer';
+      quizIcon.className = 'bi bi-question-circle text-primary';
+      quizNote.textContent = 'Click to take the quiz';
+      quizNote.className = 'text-primary';
+      
+      // Add click handler
+      quizLesson.addEventListener('click', function() {
+        document.querySelector('.video-container').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        startQuizTimer();
+      });
+      
+      // Update progress
+      updateProgress(50);
+    }
+    
+    // Quiz functionality
+    let timeLeft = 20 * 60; // 20 minutes in seconds
+    let timerInterval;
+    
+    function startQuizTimer() {
+      clearInterval(timerInterval);
+      updateTimerDisplay();
+      
+      timerInterval = setInterval(function() {
+        timeLeft--;
+        updateTimerDisplay();
+        
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          alert('Time\'s up! Your quiz will be submitted automatically.');
+          submitQuiz();
+        }
+      }, 1000);
+    }
+    
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById('quiz-timer').textContent = `Time Remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+    
+    function updateProgress(percent) {
+      const progressBar = document.querySelector('.progress-bar');
+      const progressPercent = document.getElementById('progress-percent');
+      
+      progressBar.style.width = `${percent}%`;
+      progressBar.setAttribute('aria-valuenow', percent);
+      progressPercent.textContent = `${percent}%`;
+    }
+    
+    // Handle quiz submission
+    document.getElementById('submit-quiz').addEventListener('click', submitQuiz);
+    
+    function submitQuiz() {
+      clearInterval(timerInterval);
+      
+      // In a real app, you would validate answers here
+      const score = 90; // Example score
+      
+      // Show certificate section
+      document.getElementById('quiz-container').style.display = 'none';
+      document.getElementById('certificate-section').style.display = 'block';
+      
+      // Update progress to 100%
+      updateProgress(100);
+    }
+    
+    // Handle certificate download
+    document.getElementById('download-certificate').addEventListener('click', function() {
+      alert('Certificate downloaded! In a real app, this would generate and download a PDF certificate.');
+    });
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        // Initialize progress
+        updateProgress(0);
+        
+        // Add click handler to the overlay to start the video
+        const overlay = document.getElementById('video-overlay');
+        if (overlay) {
+          overlay.addEventListener('click', function() {
+            try {
+              if (player && typeof player.playVideo === 'function') {
+                // If video hasn't started, load it first
+                if (player.getPlayerState() === YT.PlayerState.UNSTARTED) {
+                  player.loadVideoById('FYErehuSuuw', 0, 'hd720');
+                }
+                player.playVideo();
+              }
+            } catch (e) {
+              console.error('Error starting video:', e);
+            }
+          });
+        }
+        
+        // Add error boundary for unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+          console.error('Unhandled promise rejection:', event.reason);
+        });
+        
+        console.log('DOM fully loaded');
+      } catch (error) {
+        console.error('Error in DOMContentLoaded:', error);
+      }
+    });
+    
+    // Clean up on page unload
+    window.addEventListener('beforeunload', function() {
+      if (checkInterval) clearInterval(checkInterval);
+      if (player && typeof player.destroy === 'function') {
+        player.destroy();
+      }
+    });
+  </script>
+</body>
+</html>

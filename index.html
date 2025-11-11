@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Mentor Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Updated: Jul 07 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Go Learn</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="trainers.html">Instructors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn-login me-2">Login</a>
+        <a href="register.html" class="btn-getstarted">Sign Up</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.getElementById('navmenu');
+      
+      if (mobileNavToggle && navmenu) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          navmenu.classList.toggle('mobile-nav-active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+      }
+      
+      // Close mobile menu when clicking on a nav link
+      document.querySelectorAll('#navmenu a').forEach(navLink => {
+        navLink.addEventListener('click', () => {
+          if (navmenu.classList.contains('mobile-nav-active')) {
+            mobileNavToggle.click();
+          }
+        });
+      });
+    });
+  </script>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <div class="container">
+        <h2 data-aos="fade-up" data-aos-delay="100">Free Learning <br>For Every Dreamer.</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Study anytime, anywhere — no fees, no limits.</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="courses.html" class="btn-get-started">Get Started</a>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+    
+    <!-- Video Section -->
+    <section id="video" class="video-section" style="width: 100%; overflow: hidden; margin: 0; padding: 0; line-height: 0;">
+      <video autoplay loop muted playsinline style="width: 100%; display: block; margin: 0; padding: 0; line-height: 0;">
+        <source src="assets/video/ad.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section><!-- /Video Section -->
+    
+    <div class="hero-shape">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+    
+    <style>
+      /* Section spacing */
+      .section {
+        padding: 0 !important;
+      }
+      /* Add space after video section */
+      #video {
+        margin-bottom: 30px;
+      }
+      /* Hide video controls and make it non-interactive */
+      video::-webkit-media-controls {
+        display: none !important;
+      }
+      video::-webkit-media-controls-enclosure {
+        display: none !important;
+      }
+      video::-webkit-media-controls-panel {
+        display: none !important;
+      }
+      video::-webkit-media-controls-play-button {
+        display: none !important;
+      }
+      video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+      }
+      video::-webkit-media-controls-timeline {
+        display: none !important;
+      }
+      video::-webkit-media-controls-current-time-display {
+        display: none !important;
+      }
+      video::-webkit-media-controls-time-remaining-display {
+        display: none !important;
+      }
+      video::-webkit-media-controls-mute-button {
+        display: none !important;
+      }
+      video::-webkit-media-controls-volume-slider {
+        display: none !important;
+      }
+      video::-webkit-media-controls-fullscreen-button {
+        display: none !important;
+      }
+      
+      /* Make video non-interactive */
+      video {
+        pointer-events: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Remove any default video styling */
+      video:focus {
+        outline: none;
+      }
+    </style>
+
+    <!-- Counts Section -->
+    <section id="counts" class="section counts light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Students</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Courses</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Trainers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Counts Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-lg-5">
+          <div class="col-lg-4 d-flex flex-column justify-content-center pe-lg-4">
+            <div class="content p-4 rounded-3" style="background-color: #e7f5ee;">
+              <h3>Why Choose Go Learn</h3>
+              <p>
+                Learn without limits — EduFree offers 100% free courses, hands-on quizzes, and verifiable certificates to help you grow your skills confidently. Gain real knowledge from curated YouTube lessons, learn at your own pace, and build your future without spending a rupee.
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+              <!-- Feature Card 1 -->
+              <div class="col-md-4">
+                <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
+                  <div class="feature-icon mb-3 text-center">
+                    <i class="bi bi-play-circle-fill text-success" style="font-size: 2.5rem;"></i>
+                  </div>
+                  <h4 class="text-center mb-3 fw-semibold">Interactive Learning</h4>
+                  <p class="text-center mb-0">Engage with high-quality video lessons from industry experts, accessible anytime, anywhere.</p>
+                </div>
+              </div>
+
+              <!-- Feature Card 2 -->
+              <div class="col-md-4">
+                <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
+                  <div class="feature-icon mb-3 text-center">
+                    <i class="bi bi-patch-question-fill text-success" style="font-size: 2.5rem;"></i>
+                  </div>
+                  <h4 class="text-center mb-3 fw-semibold">Quizzes & Certification</h4>
+                  <p class="text-center mb-0">Test your knowledge with interactive quizzes and earn verifiable certificates upon completion.</p>
+                </div>
+              </div>
+
+              <!-- Feature Card 3 -->
+              <div class="col-md-4">
+                <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
+                  <div class="feature-icon mb-3 text-center">
+                    <i class="bi bi-unlock-fill text-success" style="font-size: 2.5rem;"></i>
+                  </div>
+                  <h4 class="text-center mb-3 fw-semibold">Free Access</h4>
+                  <p class="text-center mb-0">All courses and resources are completely free, with no hidden fees or subscriptions.</p>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="tech-stack section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="img-fluid mb-3" style="height: 60px;">
+              <h4>HTML5</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="img-fluid mb-3" style="height: 60px;">
+              <h4>CSS3</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="img-fluid mb-3" style="height: 60px;">
+              <h4>JavaScript</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="img-fluid mb-3" style="height: 60px;">
+              <h4>Bootstrap</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-4 col-6 mx-auto" data-aos="fade-up" data-aos-delay="500">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="img-fluid mb-3" style="height: 60px;">
+              <h4>Node.js</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-4 col-6 mx-auto" data-aos="fade-up" data-aos-delay="600">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="img-fluid mb-3" style="height: 60px; background: white; padding: 5px; border-radius: 4px;">
+              <h4>Express</h4>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-4 col-6 mx-auto" data-aos="fade-up" data-aos-delay="700">
+            <div class="tech-item text-center p-4">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="img-fluid mb-3" style="height: 60px;">
+              <h4>MongoDB</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><!-- /Tech Stack Section -->
+    
+    <style>
+      /* Feature Cards Styling */
+      .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+      }
+      .feature-icon i {
+        transition: transform 0.3s ease;
+      }
+      .feature-card:hover .feature-icon i {
+        transform: scale(1.1);
+      }
+
+      .tech-item {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+      }
+      .tech-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+      .tech-item h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #333;
+      }
+      /* Course card image styling */
+      .course-item img {
+        width: 100%;
+        height: 200px; /* Fixed height for all images */
+        object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+        object-position: center; /* Centers the image within the container */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      /* Ensure the card takes full height and has consistent spacing */
+      .course-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .course-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+      .course-content {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .description {
+        flex: 1;
+        margin-bottom: 15px;
+      }
+    </style>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+      <div class="container" data-aos="fade-up">
+        <!-- Section Title -->
+        <div class="section-title mb-5">
+         
+          <p>Popular Courses</p>
+        </div><!-- End Section Title -->
+
+       <div class="row g-4">
+
+  <!-- HTML COURSE -->
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+    <div class="course-item shadow-sm rounded-3 overflow-hidden d-flex flex-column w-100">
+      <img src="assets/img/html thumbnail.jpeg" class="img-fluid" alt="HTML Course" style="height:220px; object-fit:cover;">
+      <div class="course-content d-flex flex-column flex-grow-1 p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+          <p class="price mb-0 fw-semibold">Free</p>
+        </div>
+
+        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">HTML</a></h3>
+        <p class="description flex-grow-1 mb-3">It’s the backbone of every website that structures content like text, images, and links.
+          Think of it as the building blocks that shape the layout of a webpage.</p>
+      </div>
+    </div>
+  </div>
+  <!-- End Course Item -->
+
+  <!-- CSS COURSE -->
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+    <div class="course-item shadow-sm rounded-3 overflow-hidden d-flex flex-column w-100">
+      <img src="assets/img/css thumbnail.jpeg" class="img-fluid" alt="CSS Course" style="height:220px; object-fit:cover;">
+      <div class="course-content d-flex flex-column flex-grow-1 p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+          <p class="price mb-0 fw-semibold">Free</p>
+        </div>
+
+        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">CSS</a></h3>
+        <p class="description flex-grow-1 mb-3">It controls the look and feel of a site — colors, fonts, spacing, and responsiveness.
+          CSS makes a plain HTML page visually appealing and professional.</p>
+
+        <div class="trainer d-flex justify-content-between align-items-center mt-auto">
+        
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Course Item -->
+
+  <!-- JAVASCRIPT COURSE -->
+  <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+    <div class="course-item shadow-sm rounded-3 overflow-hidden d-flex flex-column w-100">
+      <img src="assets/img/js thumbnail.jpeg" class="img-fluid" alt="JavaScript Course" style="height:220px; object-fit:cover;">
+      <div class="course-content d-flex flex-column flex-grow-1 p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+          <p class="price mb-0 fw-semibold">Free</p>
+        </div>
+
+        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">JavaScript</a></h3>
+        <p class="description flex-grow-1 mb-3">It brings a website to life by adding motion, logic, and interactivity.
+          From button clicks to animations, JavaScript makes everything dynamic and engaging.</p>
+
+        <div class="trainer d-flex justify-content-between align-items-center mt-auto">
+          
+      </div>
+    </div>
+  </div>
+  <!-- End Course Item -->
+
+</div>
+
+      </div>
+    </section><!-- /Courses Section -->
+
+  
+   
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">MJ</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Kba </p>
+            <p>Chennai,600048</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 9791716354</span></p>
+            <p><strong>Email:</strong> <span>mohamedrsmi86@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MJ</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="#">JafranTech</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
