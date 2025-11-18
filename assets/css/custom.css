@@ -18,6 +18,9 @@
   box-shadow: var(--shadow-sm);
   position: relative;
   z-index: 997;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sitename {
@@ -34,7 +37,11 @@
 }
 
 .navmenu {
-  margin-left: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
 }
 
 .navmenu ul {
@@ -43,12 +50,15 @@
   display: flex;
   list-style: none;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .navmenu > ul > li {
   position: relative;
   white-space: nowrap;
-  padding: 10px 0 10px 24px;
+  padding: 10px 0;
+  margin: 0;
 }
 
 .navmenu a {
@@ -80,6 +90,12 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  padding-right: 20px;
+}
+
+.logo {
+  padding-left: 20px;
+  z-index: 2;
 }
 
 .btn-login {
@@ -206,8 +222,14 @@
 
 /* Responsive */
 @media (max-width: 1200px) {
+  .navmenu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .navmenu > ul > li {
-    padding: 10px 0 10px 15px;
+    padding: 10px 0;
+    margin: 0 8px;
   }
 }
 
@@ -219,8 +241,9 @@
   .navmenu {
     position: fixed;
     top: 70px;
-    right: -100%;
-    width: 80%;
+    left: 0;
+    right: 0;
+    width: 100%;
     height: calc(100vh - 70px);
     background: #fff;
     overflow-y: auto;
@@ -228,6 +251,10 @@
     z-index: 999;
     padding: 20px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
   
   .navmenu.mobile-nav-active {
@@ -241,6 +268,7 @@
   
   .navmenu > ul > li {
     padding: 10px 0;
+    margin-right: 0;
     border-bottom: 1px solid #eee;
   }
   
@@ -258,4 +286,37 @@
   .mobile-nav-toggle {
     margin-left: auto;
   }
+}
+
+/* Scroll Top Button */
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  background: #9D4EDD;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.4s;
+  color: #fff;
+  font-size: 24px;
+  line-height: 0;
+  text-align: center;
+  padding-top: 8px;
+  box-shadow: 0 4px 10px rgba(157, 78, 221, 0.3);
+}
+
+.scroll-top:hover {
+  background: #7B2CBF;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(157, 78, 221, 0.4);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
 }

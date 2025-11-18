@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/logo.jpg" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -28,6 +28,26 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="assets/css/custom.css" rel="stylesheet">
+  <style>
+    /* Minimal CSS to make header fixed without affecting original styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    
+    /* Add padding to body to prevent content from being hidden under fixed header */
+    body {
+      padding-top: 80px;
+    }
+    
+    /* Ensure smooth scrolling */
+    html {
+      scroll-padding-top: 80px;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: Mentor
@@ -40,7 +60,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top ">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="index.html" class="logo d-flex align-items-center">
         <h1 class="sitename">Go Learn</h1>
@@ -51,15 +71,13 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
-          <li><a href="trainers.html">Instructors</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-actions">
         <a href="login.html" class="btn-login me-2">Login</a>
-        <a href="register.html" class="btn-getstarted">Sign Up</a>
+        <a href="login.html" class="btn-login me-2">Sign up</a>
       </div>
     </div>
   </header>
@@ -181,11 +199,15 @@
 
     <!-- Counts Section -->
     <section id="counts" class="section counts light-background">
-
+      <style>
+        .purecounter {
+          color: #9D4EDD !important;
+          font-weight: 700;
+          font-size: 2.5rem;
+        }
+      </style>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
@@ -200,19 +222,14 @@
             </div>
           </div><!-- End Stats Item -->
 
-          
-
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
               <p>Trainers</p>
             </div>
           </div><!-- End Stats Item -->
-
         </div>
-
       </div>
-
     </section><!-- /Counts Section -->
 
     <!-- Why Us Section -->
@@ -220,7 +237,7 @@
       <div class="container" data-aos="fade-up">
         <div class="row gx-lg-5">
           <div class="col-lg-4 d-flex flex-column justify-content-center pe-lg-4">
-            <div class="content p-4 rounded-3" style="background-color: #e7f5ee;">
+            <div class="content p-4 rounded-3" style="background: linear-gradient(135deg, #f9f0ff 0%, #f0e5ff 100%); border: 1px solid #e6d5ff;">
               <h3>Why Choose Go Learn</h3>
               <p>
                 Learn without limits — EduFree offers 100% free courses, hands-on quizzes, and verifiable certificates to help you grow your skills confidently. Gain real knowledge from curated YouTube lessons, learn at your own pace, and build your future without spending a rupee.
@@ -240,7 +257,7 @@
               <div class="col-md-4">
                 <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
                   <div class="feature-icon mb-3 text-center">
-                    <i class="bi bi-play-circle-fill text-success" style="font-size: 2.5rem;"></i>
+                    <i class="bi bi-play-circle-fill" style="font-size: 2.5rem; color: #9D4EDD;"></i>
                   </div>
                   <h4 class="text-center mb-3 fw-semibold">Interactive Learning</h4>
                   <p class="text-center mb-0">Engage with high-quality video lessons from industry experts, accessible anytime, anywhere.</p>
@@ -251,7 +268,7 @@
               <div class="col-md-4">
                 <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
                   <div class="feature-icon mb-3 text-center">
-                    <i class="bi bi-patch-question-fill text-success" style="font-size: 2.5rem;"></i>
+                    <i class="bi bi-patch-question-fill" style="font-size: 2.5rem; color: #9D4EDD;"></i>
                   </div>
                   <h4 class="text-center mb-3 fw-semibold">Quizzes & Certification</h4>
                   <p class="text-center mb-0">Test your knowledge with interactive quizzes and earn verifiable certificates upon completion.</p>
@@ -262,7 +279,7 @@
               <div class="col-md-4">
                 <div class="feature-card h-100 p-4 rounded-3 bg-white shadow-sm">
                   <div class="feature-icon mb-3 text-center">
-                    <i class="bi bi-unlock-fill text-success" style="font-size: 2.5rem;"></i>
+                    <i class="bi bi-unlock-fill" style="font-size: 2.5rem; color: #9D4EDD;"></i>
                   </div>
                   <h4 class="text-center mb-3 fw-semibold">Free Access</h4>
                   <p class="text-center mb-0">All courses and resources are completely free, with no hidden fees or subscriptions.</p>
@@ -421,11 +438,12 @@
       <img src="assets/img/html thumbnail.jpeg" class="img-fluid" alt="HTML Course" style="height:220px; object-fit:cover;">
       <div class="course-content d-flex flex-column flex-grow-1 p-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+          <p class="category mb-0 fw-semibold" style="background-color: #7ba4ff; color: #000; padding: 4px 10px; border-radius: 6px; display: inline-block;">Web Development</p>
+
           <p class="price mb-0 fw-semibold">Free</p>
         </div>
 
-        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">HTML</a></h3>
+        <h3 class="fw-bold"><a href="courses.html" class="text-decoration-none text-dark">HTML</a></h3>
         <p class="description flex-grow-1 mb-3">It’s the backbone of every website that structures content like text, images, and links.
           Think of it as the building blocks that shape the layout of a webpage.</p>
       </div>
@@ -439,11 +457,12 @@
       <img src="assets/img/css thumbnail.jpeg" class="img-fluid" alt="CSS Course" style="height:220px; object-fit:cover;">
       <div class="course-content d-flex flex-column flex-grow-1 p-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+         <p class="category mb-0 fw-semibold" style="background-color: #7ba4ff; color: #000; padding: 4px 10px; border-radius: 6px; display: inline-block;">Web Development</p>
+
           <p class="price mb-0 fw-semibold">Free</p>
         </div>
 
-        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">CSS</a></h3>
+        <h3 class="fw-bold"><a href="courses.html" class="text-decoration-none text-dark">CSS</a></h3>
         <p class="description flex-grow-1 mb-3">It controls the look and feel of a site — colors, fonts, spacing, and responsiveness.
           CSS makes a plain HTML page visually appealing and professional.</p>
 
@@ -462,11 +481,12 @@
       <img src="assets/img/js thumbnail.jpeg" class="img-fluid" alt="JavaScript Course" style="height:220px; object-fit:cover;">
       <div class="course-content d-flex flex-column flex-grow-1 p-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <p class="category mb-0 text-success fw-semibold">Web Development</p>
+          <p class="category mb-0 fw-semibold" style="background-color: #7ba4ff; color: #000; padding: 4px 10px; border-radius: 6px; display: inline-block;">Web Development</p>
+
           <p class="price mb-0 fw-semibold">Free</p>
         </div>
 
-        <h3 class="fw-bold"><a href="course-details.html" class="text-decoration-none text-dark">JavaScript</a></h3>
+        <h3 class="fw-bold"><a href="courses.html" class="text-decoration-none text-dark">JavaScript</a></h3>
         <p class="description flex-grow-1 mb-3">It brings a website to life by adding motion, logic, and interactivity.
           From button clicks to animations, JavaScript makes everything dynamic and engaging.</p>
 
