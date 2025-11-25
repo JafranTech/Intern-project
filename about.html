@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,12 +39,12 @@
       right: 0;
       z-index: 1030;
     }
-    
+
     /* Add padding to body to prevent content from being hidden under fixed header */
     body {
       padding-top: 80px;
     }
-    
+
     /* Ensure smooth scrolling */
     html {
       scroll-padding-top: 80px;
@@ -84,18 +86,18 @@
 
   <!-- Navigation Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
       const navmenu = document.getElementById('navmenu');
-      
+
       if (mobileNavToggle && navmenu) {
-        mobileNavToggle.addEventListener('click', function(e) {
+        mobileNavToggle.addEventListener('click', function (e) {
           navmenu.classList.toggle('mobile-nav-active');
           this.classList.toggle('bi-list');
           this.classList.toggle('bi-x');
         });
       }
-      
+
       // Close mobile menu when clicking on a nav link
       document.querySelectorAll('#navmenu a').forEach(navLink => {
         navLink.addEventListener('click', () => {
@@ -104,7 +106,7 @@
           }
         });
       });
-      
+
       // Set active class based on current page
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('#navmenu a').forEach(link => {
@@ -124,11 +126,16 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1 style="color: #9D4EDD;">About Us<br></h1>
-              <p class="mb-0 typewriter-text" id="about-typewriter">This course section of the website provides learners with easy-to-understand lessons on the fundamentals of front-end development. It includes video tutorials, structured modules, and short quizzes to help users learn HTML, CSS, and JavaScript step by step.
+              <p class="mb-0 typewriter-text" id="about-typewriter">This course section of the website provides learners
+                with easy-to-understand lessons on the fundamentals of front-end development. It includes video
+                tutorials, structured modules, and short quizzes to help users learn HTML, CSS, and JavaScript step by
+                step.
 
-The platform is designed for beginners, offering clear explanations, practical examples, and hands-on practice. Each course is divided into small, manageable lessons so learners can study at their own pace.
+                The platform is designed for beginners, offering clear explanations, practical examples, and hands-on
+                practice. Each course is divided into small, manageable lessons so learners can study at their own pace.
 
-By completing the modules, users build a strong foundation in web development and can earn a certificate as proof of their progress..</p>
+                By completing the modules, users build a strong foundation in web development and can earn a certificate
+                as proof of their progress..</p>
             </div>
           </div>
         </div>
@@ -147,16 +154,21 @@ By completing the modules, users build a strong foundation in web development an
           </div>
 
           <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
+            <h3>Empowering Learners, One Skill at a Time</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              At Go Learn, we believe that quality education should be accessible to everyone. Our platform brings
+              together structured learning, real-world projects, and guided tutorials to help learners grow with
+              confidence.
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Learn through practical, beginner-friendly courses designed
+                  for real-world skill building.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Stay motivated with interactive lessons, quizzes, and
+                  certificates on course completion.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Gain job-ready knowledge through clear explanations, hands-on
+                  tasks, and consistent guidance from industry resources.</span></li>
             </ul>
+
           </div>
 
         </div>
@@ -165,7 +177,7 @@ By completing the modules, users build a strong foundation in web development an
 
     </section><!-- /About Us Section -->
 
-   
+
     <!-- Counts Section -->
     <section id="counts" class="section counts light-background">
       <style>
@@ -179,21 +191,24 @@ By completing the modules, users build a strong foundation in web development an
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Students</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Courses</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"
+                class="purecounter"></span>
               <p>Trainers</p>
             </div>
           </div><!-- End Stats Item -->
@@ -206,8 +221,8 @@ By completing the modules, users build a strong foundation in web development an
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>What are they saying</p>
+        
+        <p>Our Students</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -240,95 +255,101 @@ By completing the modules, users build a strong foundation in web development an
           </script>
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/person/person-m-9.webp" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+           <div class="swiper-slide">
+  <div class="testimonial-wrap">
+    <div class="testimonial-item">
+      <img src="assets/img/person/person-m-9.webp" class="testimonial-img" alt="">
+      <h3>Saul Goodman</h3>
+      <h4>Student</h4>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>The lessons are clear and easy to follow. I finally understand concepts that confused me before. Highly recommended for beginners!</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+      </p>
+    </div>
+  </div>
+</div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/person/person-f-5.webp" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+<div class="swiper-slide">
+  <div class="testimonial-wrap">
+    <div class="testimonial-item">
+      <img src="assets/img/person/person-f-5.webp" class="testimonial-img" alt="">
+      <h3>Sara Wilsson</h3>
+      <h4>Student</h4>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>The platform made learning enjoyable. The quizzes helped me remember everything I studied. Great experience overall!</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+      </p>
+    </div>
+  </div>
+</div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/person/person-f-12.webp" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+<div class="swiper-slide">
+  <div class="testimonial-wrap">
+    <div class="testimonial-item">
+      <img src="assets/img/person/person-f-12.webp" class="testimonial-img" alt="">
+      <h3>Jena Karlis</h3>
+      <h4>Student</h4>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>The step-by-step explanations are very helpful. I gained confidence in HTML and CSS thanks to these courses.</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+      </p>
+    </div>
+  </div>
+</div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/person/person-m-12.webp" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+<div class="swiper-slide">
+  <div class="testimonial-wrap">
+    <div class="testimonial-item">
+      <img src="assets/img/person/person-m-12.webp" class="testimonial-img" alt="">
+      <h3>Matt Brandon</h3>
+      <h4>Student</h4>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>I loved the real-world examples! Everything is taught in a simple, beginner-friendly way. This platform improved my skills a lot.</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+      </p>
+    </div>
+  </div>
+</div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/person/person-m-13.webp" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+<div class="swiper-slide">
+  <div class="testimonial-wrap">
+    <div class="testimonial-item">
+      <img src="assets/img/person/person-m-13.webp" class="testimonial-img" alt="">
+      <h3>John Larson</h3>
+      <h4>Student</h4>
+      <div class="stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+          class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </div>
+      <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>The course structure is perfect for self-paced learners. I now feel confident to build my own projects from scratch.</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+      </p>
+    </div>
+  </div>
+</div>
+
 
           </div>
           <div class="swiper-pagination"></div>
@@ -388,7 +409,8 @@ By completing the modules, users build a strong foundation in web development an
           <h4>Our Newsletter</h4>
           <p>Subscribe to our newsletter and receive the latest updates about our courses and tutorials!</p>
           <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email" placeholder="Your Email"><input type="submit" value="Subscribe"></div>
+            <div class="newsletter-form"><input type="email" name="email" placeholder="Your Email"><input type="submit"
+                value="Subscribe"></div>
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your subscription request has been sent. Thank you!</div>
@@ -410,7 +432,8 @@ By completing the modules, users build a strong foundation in web development an
     </div>
 
   </footer><!-- End Footer -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
